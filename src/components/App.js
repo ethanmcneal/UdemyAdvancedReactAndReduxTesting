@@ -3,7 +3,7 @@ import CommentBox from './CommentBox';
 import CommentList from './CommentList';
 
 
-export default () => {
+export default function App () {
     return(
         <div>
            <CommentBox />
