@@ -4,8 +4,9 @@ import { shallow } from 'enzyme'
 import CommentBox from '../CommentBox'
 import CommentList from '../CommentList'
 
+let wrapped;
 beforeEach(() => {
-    const wrapped = shallow(<App />)
+     wrapped = shallow(<App />)
 });
 
 it('Shows the CommentBox component', () => {
