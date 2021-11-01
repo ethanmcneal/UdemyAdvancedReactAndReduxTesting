@@ -6,7 +6,11 @@ import Root from "../../Root";
 let wrapped;
 
 beforeEach(() => {
-	wrapped = mount(<Root><CommentBox /></Root>);
+	wrapped = mount(
+		<Root>
+			<CommentBox />
+		</Root>,
+	);
 });
 
 afterEach(() => {
@@ -19,14 +23,14 @@ it("shows a textarea and button", () => {
 });
 
 describe("the form", () => {
-    beforeEach(() => {
-        wrapped.find("textarea").simulate("change", {
+	beforeEach(() => {
+		wrapped.find("textarea").simulate("change", {
 			target: {
 				value: "new Comment",
 			},
 		});
 		wrapped.update();
-    })
+	});
 	it("has a text area that users can type in", () => {
 		expect(wrapped.find("textarea").prop("value")).toEqual("new Comment");
 	});
